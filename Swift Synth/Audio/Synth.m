@@ -54,4 +54,27 @@
     _signal = signal;
 }
 
+//MARK:- Source Node Creation Function
+- (AVAudioSourceNode *)sourceNode {
+    if (!_sourceNode) {
+        AVAudioSourceNode *node = [[AVAudioSourceNode alloc] initWithRenderBlock:^OSStatus(BOOL * _Nonnull isSilence, const AudioTimeStamp * _Nonnull timestamp, AVAudioFrameCount frameCount, AudioBufferList * _Nonnull outputData) {
+            
+            Float32 *outputBuffer = (Float32 *)outputData->mBuffers[0].mData;
+
+            for (int frame = 0; frame < frameCount; frame++) {
+                float sampleVal = self->_signal(self->time);
+                self->time += self->deltaTime;
+                
+                outputBuffer[frame] = sampleVal;
+            }
+            
+            return noErr;
+        }];
+        
+        _sourceNode = node;
+    }
+    
+    return _sourceNode;
+}
+
 @end

@@ -15,7 +15,7 @@
 
 - (instancetype _Nullable )initWithSignal:(Signal _Nonnull )signal;
 
-+ (Synth * __nonnull)sharedInstance;
++ (Synth * _Nonnull )sharedInstance;
 
 - (void)setWaveformToSignal:(Signal _Nonnull )signal;
 
