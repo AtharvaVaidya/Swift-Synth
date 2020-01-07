@@ -69,4 +69,19 @@ static float _frequency = 440.0f;
     return signal;
 }
 
++ (Signal)square {
+    Signal signal = ^float(float time) {
+        double period = 1.0 / (double)_frequency;
+        double currentTime = fmod((double)time, period);
+        
+        if (currentTime / period < 0.5) {
+            return _amplitude;
+        } else {
+            return -1.0 * _amplitude;
+        }
+    };
+    
+    return signal;
+}
+
 @end
