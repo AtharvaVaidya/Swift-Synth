@@ -18,6 +18,7 @@
 		55FB1E6322EE0B8700AED3D2 /* UIColor+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB1E6222EE0B8700AED3D2 /* UIColor+Set.swift */; };
 		DB7A8236238817320075C7C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7A8235238817320075C7C1 /* README.md */; };
 		EC4F44CA23C4CF850011F5E0 /* Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4F44C923C4CF850011F5E0 /* Synth.m */; };
+		EC9DFBB223C4DC220020317F /* Oscillator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9DFBB123C4DC220020317F /* Oscillator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		EC4F44C923C4CF850011F5E0 /* Synth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Synth.m; sourceTree = "<group>"; };
 		EC4F44CB23C4CFE00011F5E0 /* Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 		EC9DFBAF23C4D1B90020317F /* Waveform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Waveform.h; sourceTree = "<group>"; };
+		EC9DFBB023C4DC220020317F /* Oscillator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Oscillator.h; sourceTree = "<group>"; };
+		EC9DFBB123C4DC220020317F /* Oscillator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Oscillator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				EC9DFBAF23C4D1B90020317F /* Waveform.h */,
 				EC4F44C823C4CF850011F5E0 /* Synth.h */,
 				EC4F44C923C4CF850011F5E0 /* Synth.m */,
+				EC9DFBB023C4DC220020317F /* Oscillator.h */,
+				EC9DFBB123C4DC220020317F /* Oscillator.m */,
 				550D025722E55477002C57C9 /* Synth.swift */,
 				550D025D22E557A5002C57C9 /* Oscillator.swift */,
 			);
@@ -207,6 +212,7 @@
 				550D025622E53233002C57C9 /* UIView+Add.swift in Sources */,
 				550D024622E526DD002C57C9 /* SynthViewController.swift in Sources */,
 				550D024222E526DD002C57C9 /* AppDelegate.swift in Sources */,
+				EC9DFBB223C4DC220020317F /* Oscillator.m in Sources */,
 				550D025E22E557A5002C57C9 /* Oscillator.swift in Sources */,
 				550D025822E55477002C57C9 /* Synth.swift in Sources */,
 				550D024422E526DD002C57C9 /* SceneDelegate.swift in Sources */,
