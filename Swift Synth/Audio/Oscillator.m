@@ -29,4 +29,10 @@ static float _frequency = 440.0f;
     _frequency = frequency;
 }
 
++ (Signal)sine {
+    return ^float(float time) {
+        return _amplitude * sinf(2.0 * M_PI * _frequency * time);
+    };
+}
+
 @end
