@@ -7,7 +7,27 @@
 //
 
 #import "Synth.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation Synth
+{
+    AVAudioEngine *audioEngine;
+    float time;
+    double sampleRate;
+    float deltaTime;
+    
+    AVAudioSourceNode *_sourceNode;
+    Signal _signal;
+}
+
++ (Synth *)sharedInstance {
+    static Synth *shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shared = [[Synth alloc] init];
+    });
+    
+    return shared;
+}
 
 @end

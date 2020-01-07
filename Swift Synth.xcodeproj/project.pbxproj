@@ -37,6 +37,7 @@
 		EC4F44C823C4CF850011F5E0 /* Synth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Synth.h; sourceTree = "<group>"; };
 		EC4F44C923C4CF850011F5E0 /* Synth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Synth.m; sourceTree = "<group>"; };
 		EC4F44CB23C4CFE00011F5E0 /* Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
+		EC9DFBAF23C4D1B90020317F /* Waveform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Waveform.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				EC4F44CB23C4CFE00011F5E0 /* Signal.h */,
+				EC9DFBAF23C4D1B90020317F /* Waveform.h */,
 				EC4F44C823C4CF850011F5E0 /* Synth.h */,
 				EC4F44C923C4CF850011F5E0 /* Synth.m */,
 				550D025722E55477002C57C9 /* Synth.swift */,
