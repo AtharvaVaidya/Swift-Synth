@@ -84,4 +84,19 @@ static float _frequency = 440.0f;
     return signal;
 }
 
++ (Signal)whiteNoise {
+    Signal signal = ^float(float time) {
+        float random = ((float)arc4random() / UINT_MAX);
+        uint32_t negativeSign = arc4random_uniform(1);
+        
+        if (negativeSign == 1) {
+            return _amplitude * random;
+        } else {
+            return _amplitude * -1.0 * random;
+        }
+    };
+    
+    return signal;
+}
+
 @end
