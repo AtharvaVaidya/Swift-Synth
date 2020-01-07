@@ -30,4 +30,28 @@
     return shared;
 }
 
+- (instancetype)initWithSignal:(Signal)signal {
+    self = [super init];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
+//MARK:- Volume Functions
+- (void)setVolume:(float)volume {
+    [audioEngine.mainMixerNode setOutputVolume:volume];
+}
+
+- (float)volume {
+    return audioEngine.mainMixerNode.outputVolume;
+}
+
+//MARK:- Waveform Functions
+- (void)setWaveformToSignal:(Signal)signal {
+    _signal = signal;
+}
+
 @end
