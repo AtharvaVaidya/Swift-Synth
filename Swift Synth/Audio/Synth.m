@@ -70,6 +70,11 @@
     return self;
 }
 
+//MARK:- Helper functions
+- (BOOL)isPlaying {
+    return audioEngine.mainMixerNode.outputVolume > 0;
+}
+
 //MARK:- Volume Functions
 - (void)setVolume:(float)volume {
     [audioEngine.mainMixerNode setOutputVolume:volume];

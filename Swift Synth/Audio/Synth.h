@@ -18,5 +18,6 @@
 + (Synth * _Nonnull )sharedInstance;
 
 - (void)setWaveformToSignal:(Signal _Nonnull )signal;
+- (BOOL)isPlaying;
 
 @end
