@@ -6,10 +6,12 @@
 //  Copyright © 2020 Grant Emerson. All rights reserved.
 //
 
-typedef NS_ENUM(NSInteger, WaveformType) {
-    WaveformTypeSine,
-    WaveformTypeTriangle,
-    WaveformTypeSawtooth,
-    WaveformTypeSquare,
-    WaveformTypeWhiteNoise
+#import <Foundation/Foundation.h>
+
+typedef NS_ENUM(NSInteger, Waveform) {
+    WaveformSine,
+    WaveformTriangle,
+    WaveformSawtooth,
+    WaveformSquare,
+    WaveformWhiteNoise
 };
