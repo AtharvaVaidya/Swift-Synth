@@ -34,7 +34,36 @@
     self = [super init];
     
     if (self) {
+        audioEngine = [[AVAudioEngine alloc] init];
         
+        AVAudioMixerNode *mainMixer = audioEngine.mainMixerNode;
+        AVAudioOutputNode *outputNode = audioEngine.outputNode;
+        AVAudioFormat *format = [audioEngine.outputNode inputFormatForBus:0];
+        
+        sampleRate = format.sampleRate;
+        deltaTime = 1 / sampleRate;
+        
+        _signal = signal;
+        
+        AVAudioFormat *inputFormat = [[AVAudioFormat alloc] initWithCommonFormat:format.commonFormat
+                                                                      sampleRate:sampleRate
+                                                                        channels:1
+                                                                     interleaved:format.isInterleaved];
+        //This initializes the source node.
+        AVAudioSourceNode *sourceNode = [self sourceNode];
+        
+        [audioEngine attachNode:sourceNode];
+        [audioEngine connect:sourceNode to:mainMixer format:inputFormat];
+        [audioEngine connect:mainMixer to:outputNode format:nil];
+        
+        [mainMixer setOutputVolume:0];
+        
+        NSError *audioEngineStartError;
+        BOOL couldStartEngine = [audioEngine startAndReturnError:&audioEngineStartError];
+        
+        if (!couldStartEngine) {
+            return nil;
+        }
     }
     
     return self;
