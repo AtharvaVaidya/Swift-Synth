@@ -7,6 +7,7 @@
 //
 
 #import "Synth.h"
+#import "Oscillator.h"
 #import <AVFoundation/AVFoundation.h>
 
 @implementation Synth
@@ -24,7 +25,7 @@
     static Synth *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shared = [[Synth alloc] init];
+        shared = [[Synth alloc] initWithSignal:[Oscillator sine]];
     });
     
     return shared;
