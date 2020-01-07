@@ -35,4 +35,27 @@ static float _frequency = 440.0f;
     };
 }
 
++ (Signal)triangle {
+    Signal signal = ^float(float time) {
+        double period = 1.0 / (double)_frequency;
+        double currentTime = fmod((double)time, period);
+        
+        double value = currentTime / period;
+        
+        double result = 0.0;
+        
+        if (value < 0.25) {
+            result = value * 4;
+        } else if (value < 0.75) {
+            result = 2.0 - (value * 4.0);
+        } else {
+            result = value * 4 - 4.0;
+        }
+        
+        return _amplitude * (float)result;
+    };
+    
+    return signal;
+}
+
 @end
