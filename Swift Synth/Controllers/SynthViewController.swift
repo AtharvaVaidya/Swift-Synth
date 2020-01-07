@@ -6,7 +6,7 @@ class SynthViewController: UIViewController {
     private lazy var parameterLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Frequency: 0 Hz  Amplitude: 0%"
+        label.text = "Frequency: 0 Hz  Amplitude: 0%  \(PlayState.notplaying.rawValue)"
         label.translatesAutoresizingMaskIntoConstraints = false
 
 		return label
@@ -27,6 +27,15 @@ class SynthViewController: UIViewController {
 		
         return segmentedControl
     }()
+    
+    enum PlayState: String {
+        case playing = "Playing..."
+        case notplaying = "Not Playing"
+    }
+    
+    var currentPlayState: PlayState {
+        return Synth.sharedInstance().isPlaying() ? .playing : .notplaying
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +62,12 @@ class SynthViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         setPlaybackStateTo(false)
-        parameterLabel.text = "Frequency: 0 Hz  Amplitude: 0%"
+        parameterLabel.text = "Frequency: 0 Hz  Amplitude: 0%  \(currentPlayState.rawValue)"
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         setPlaybackStateTo(false)
-        parameterLabel.text = "Frequency: 0 Hz  Amplitude: 0%"
+        parameterLabel.text = "Frequency: 0 Hz  Amplitude: 0%  \(currentPlayState.rawValue)"
     }
     
     // MARK: Selector Functions
@@ -112,6 +121,7 @@ class SynthViewController: UIViewController {
         
         let amplitudePercent = Int(Oscillator.amplitude() * 100)
         let frequencyHertz = Int(Oscillator.frequency())
-        parameterLabel.text = "Frequency: \(frequencyHertz) Hz  Amplitude: \(amplitudePercent)%"
+        
+        parameterLabel.text = "Frequency: \(frequencyHertz) Hz  Amplitude: \(amplitudePercent)%  \(currentPlayState.rawValue)"
     }
 }
