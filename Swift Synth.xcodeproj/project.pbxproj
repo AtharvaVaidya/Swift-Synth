@@ -17,6 +17,7 @@
 		550D025E22E557A5002C57C9 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D025D22E557A5002C57C9 /* Oscillator.swift */; };
 		55FB1E6322EE0B8700AED3D2 /* UIColor+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB1E6222EE0B8700AED3D2 /* UIColor+Set.swift */; };
 		DB7A8236238817320075C7C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7A8235238817320075C7C1 /* README.md */; };
+		EC4F44CA23C4CF850011F5E0 /* Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4F44C923C4CF850011F5E0 /* Synth.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,10 @@
 		550D025D22E557A5002C57C9 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		55FB1E6222EE0B8700AED3D2 /* UIColor+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Set.swift"; sourceTree = "<group>"; };
 		DB7A8235238817320075C7C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EC4F44C723C4CF850011F5E0 /* Swift Synth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift Synth-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC4F44C823C4CF850011F5E0 /* Synth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Synth.h; sourceTree = "<group>"; };
+		EC4F44C923C4CF850011F5E0 /* Synth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Synth.m; sourceTree = "<group>"; };
+		EC4F44CB23C4CFE00011F5E0 /* Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 				550D024A22E526DE002C57C9 /* Assets.xcassets */,
 				550D024C22E526DE002C57C9 /* LaunchScreen.storyboard */,
 				550D024F22E526DE002C57C9 /* Info.plist */,
+				EC4F44C723C4CF850011F5E0 /* Swift Synth-Bridging-Header.h */,
 			);
 			path = "Swift Synth";
 			sourceTree = "<group>";
@@ -88,6 +94,9 @@
 		550D025A22E556BA002C57C9 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				EC4F44CB23C4CFE00011F5E0 /* Signal.h */,
+				EC4F44C823C4CF850011F5E0 /* Synth.h */,
+				EC4F44C923C4CF850011F5E0 /* Synth.m */,
 				550D025722E55477002C57C9 /* Synth.swift */,
 				550D025D22E557A5002C57C9 /* Oscillator.swift */,
 			);
@@ -151,6 +160,7 @@
 				TargetAttributes = {
 					550D023D22E526DD002C57C9 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -190,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4F44CA23C4CF850011F5E0 /* Synth.m in Sources */,
 				55FB1E6322EE0B8700AED3D2 /* UIColor+Set.swift in Sources */,
 				550D025622E53233002C57C9 /* UIView+Add.swift in Sources */,
 				550D024622E526DD002C57C9 /* SynthViewController.swift in Sources */,
@@ -332,8 +343,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URG8NKU79W;
+				DEVELOPMENT_TEAM = Y7969DNQN4;
 				INFOPLIST_FILE = "Swift Synth/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +353,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pictural.ai.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift Synth/Swift Synth-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -350,8 +364,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URG8NKU79W;
+				DEVELOPMENT_TEAM = Y7969DNQN4;
 				INFOPLIST_FILE = "Swift Synth/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -359,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pictural.ai.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift Synth/Swift Synth-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
