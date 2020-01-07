@@ -58,4 +58,15 @@ static float _frequency = 440.0f;
     return signal;
 }
 
++ (Signal)sawtooth {
+    Signal signal = ^float(float time) {
+        float period = 1.0 / _frequency;
+        double currentTime = fmod((double)time, (double)period);
+        
+        return _amplitude * (((float)currentTime / period) * 2.0 - 1.0);
+    };
+    
+    return signal;
+}
+
 @end
